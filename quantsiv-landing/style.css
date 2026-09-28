@@ -1,0 +1,14 @@
+/* Basic styling */
+body {font-family:Arial,sans-serif; margin:0; padding:0; background:#fafafa; color:#333;}
+header {text-align:center; padding:4rem 2rem; background:linear-gradient(135deg,#0f2027,#203a43,#2c5364); color:#fff;}
+header h1 {font-size:2.5rem;}
+header p {font-size:1.2rem; margin-top:1rem;}
+.cta {display:inline-block; margin-top:2rem; padding:0.8rem 1.5rem; background:#00ff88; color:#0f2027; border-radius:5px; text-decoration:none;}
+.section {padding:3rem 2rem; text-align:center;}
+.section.dark {background:#f0f0f0;}
+.features {display:flex; flex-wrap:wrap; gap:1.5rem; justify-content:center; margin-top:2rem;}
+.feature {background:#fff; padding:1.5rem; border-radius:8px; width:260px; box-shadow:0 2px 6px rgba(0,0,0,0.1);}
+footer {text-align:center; padding:1.5rem; font-size:0.9rem; color:#666; border-top:1px solid #eee;}
+form {max-width:500px; margin:0 auto; display:flex; gap:0.5rem;}
+form input {flex:1; padding:0.8rem; border:1px solid #ddd; border-radius:4px;}
+form button {background:#00ff88; border:none; padding:0.8rem 1.2rem; color:#0f2027; border-radius:4px; cursor:pointer;}
