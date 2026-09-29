@@ -220,6 +220,16 @@ body {
     background-color: var(--color-black);
 }
 
+/* New subsection styling */
+.section-subheading {
+    font-size: var(--font-size-lg);
+    color: var(--color-gray-dark);
+    margin-bottom: 2.5rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 /* Features Section */
 .features-grid {
     display: flex;
