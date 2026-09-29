@@ -35,10 +35,12 @@ body {
 /* Header Layout */
 .site-header {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     padding: 2rem;
     border-bottom: 1px solid var(--color-gray-medium);
+    gap: 2rem;
+    flex-wrap: wrap;
 }
 
 .logo-left,
@@ -58,7 +60,6 @@ body {
     font-weight: bold;
     font-size: var(--font-size-2xl);
     letter-spacing: -1px;
-    flex: 1;
     justify-content: center;
 }
 
@@ -399,6 +400,7 @@ html {
     .site-header {
         flex-wrap: wrap;
         gap: 1rem;
+        padding: 1.5rem;
     }
 
     .logo-left,
@@ -411,37 +413,178 @@ html {
     .nav-list {
         flex-wrap: wrap;
         justify-content: center;
+        gap: 1rem;
+    }
+
+    .hero {
+        padding: 4rem 1.5rem;
     }
 
     .hero h1 {
-        font-size: var(--font-size-3xl);
+        font-size: var(--font-size-2xl);
     }
 
     .hero-subheading {
-        font-size: var(--font-size-lg);
+        font-size: var(--font-size-base);
     }
 
     .hero-buttons {
         flex-direction: column;
         align-items: center;
+        gap: 1rem;
     }
 
     .cta-primary,
     .cta-secondary {
-        width: 200px;
+        width: 100%;
+        max-width: 280px;
         text-align: center;
+        padding: 0.875rem 1.5rem;
+    }
+
+    .security-statement {
+        padding: 2rem 1.5rem;
     }
 
     .security-statement p {
         font-size: var(--font-size-base);
+        line-height: 1.6;
+    }
+
+    .section {
+        padding: 4rem 1.5rem;
+    }
+
+    .section h2 {
+        font-size: var(--font-size-2xl);
+        margin-bottom: 2rem;
+    }
+
+    .feature-card,
+    .step {
+        width: 100%;
+        max-width: 320px;
+        margin: 0 auto 1.5rem;
+    }
+
+    .features-grid,
+    .process-steps {
+        gap: 1.5rem;
+    }
+
+    .capabilities-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .newsletter {
+        padding: 3rem 1.5rem;
+    }
+
+    .newsletter h2 {
+        font-size: var(--font-size-xl);
+        margin-bottom: 1rem;
+    }
+
+    .newsletter p {
+        font-size: var(--font-size-lg);
+        margin-bottom: 1.5rem;
     }
 
     .newsletter form {
-        flex-direction: column;
+        gap: 0.75rem;
     }
 
     .newsletter input,
     .newsletter button {
-        width: 100%;
+        padding: 0.875rem;
+        font-size: var(--font-size-base);
     }
+
+    .supported-banner {
+        padding: 0.75rem 0;
+    }
+
+    .banner-track {
+        gap: 2rem;
+        animation: marquee 15s linear infinite;
+    }
+
+    .banner-item {
+        font-size: var(--font-size-base);
+    }
+
+    footer {
+        padding: 1.5rem;
+    }
+
+    footer div {
+        margin-bottom: 0.25rem;
+        font-size: var(--font-size-sm);
+    }
+}
+
+/* Additional small screen adjustments */
+@media (max-width: 480px) {
+    .site-header {
+        padding: 1rem;
+    }
+
+    .logo-left {
+        font-size: var(--font-size-lg);
+    }
+
+    .brand-center {
+        font-size: var(--font-size-xl);
+    }
+
+    .hero h1 {
+        font-size: var(--font-size-xl);
+    }
+
+    .section {
+        padding: 3rem 1rem;
+    }
+
+    .section h2 {
+        font-size: var(--font-size-xl);
+    }
+
+    .feature-card,
+    .step {
+        padding: 2rem;
+    }
+
+    .capability-item {
+        padding: 1.5rem;
+    }
+
+    .newsletter input {
+        font-size: var(--font-size-sm);
+    }
+
+    .newsletter button {
+        font-size: var(--font-size-sm);
+        padding: 0.75rem 1.25rem;
+    }
+}
+
+/* Add font-size-sm variable */
+:root {
+    /* Black and White Color Scheme */
+    --color-black: #000000;
+    --color-white: #ffffff;
+    --color-gray-light: #f5f5f5;
+    --color-gray-medium: #cccccc;
+    --color-gray-dark: #666666;
+
+    /* Typography */
+    --font-primary: 'Courier New', Courier, monospace;
+    --font-size-base: 16px;
+    --font-size-sm: 0.875rem;
+    --font-size-lg: 1.25rem;
+    --font-size-xl: 1.5rem;
+    --font-size-2xl: 2rem;
+    --font-size-3xl: 2.5rem;
+    --font-size-4xl: 3rem;
 }
