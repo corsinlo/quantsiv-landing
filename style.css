@@ -604,3 +604,19 @@ html {
     width: auto;
     display: inline-block;
 }
+
+/* Header layout adjustments */
+.site-header {
+    justify-content: flex-start;
+    align-items: center;
+}
+.brand-center {
+    flex-shrink: 0;
+}
+.nav-center {
+    flex-grow: 1;
+    text-align: center;
+}
+.nav-list {
+    justify-content: center;
+}
