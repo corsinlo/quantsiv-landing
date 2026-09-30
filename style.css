@@ -630,3 +630,13 @@ html {
     width: 100%;
     max-width: none;
 }
+
+/* Process steps like capabilities rectangles */
+.process-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+.step {
+    width: 100%;
+}
