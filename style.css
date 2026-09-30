@@ -598,3 +598,9 @@ html {
     --font-size-3xl: 2.5rem;
     --font-size-4xl: 3rem;
 }
+/* Logo styles */
+.logo {
+    height: 2rem;
+    width: auto;
+    display: inline-block;
+}
