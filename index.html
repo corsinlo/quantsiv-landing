@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <link rel="icon" href="assets/logo-symbol.png" type="image/png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Quantsiv finds quantum-vulnerable cryptography in your code, quantifies harvest-now-decrypt-later exposure, and produces the Cryptographic Bill of Materials regulators now require.">
     <title>Quantsiv - Quantum Security Platform</title>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -13,9 +14,11 @@
         <div class="brand-center"><img src="assets/logo-symbol.png" alt="Quantsiv Logo" class="logo"></div>
         <nav class="nav-center">
             <ul class="nav-list">
-                <li><a href="#features" class="nav-link">Features</a></li>
+                <li><a href="#threat" class="nav-link">The Threat</a></li>
+                <li><a href="#compliance" class="nav-link">Deadlines</a></li>
                 <li><a href="#how-it-works" class="nav-link">How it works</a></li>
                 <li><a href="#capabilities" class="nav-link">Capabilities</a></li>
+                <li><a href="#roadmap" class="nav-link">Roadmap</a></li>
             </ul>
         </nav>
     </header>
@@ -23,143 +26,222 @@
     <!-- Hero section -->
     <section class="hero">
         <h1>Quantsiv: Quantum Security</h1>
-<p class="hero-subheading">Protect your enterprise from harvest-now-decrypt-later attacks with automated quantum-vulnerability scanning.</p>
+        <p class="hero-subheading">Adversaries are recording your encrypted data today to decrypt it once quantum computers arrive. Quantsiv maps every quantum-vulnerable key in your codebase and produces the Cryptographic Bill of Materials the 2030 deadlines require.</p>
         <div class="hero-buttons">
-            <a href="#features" class="cta-primary">See How It Works</a>
-            <a href="#capabilities" class="cta-secondary">Explore Capabilities</a>
+            <a href="#threat" class="cta-primary">Understand the Threat</a>
+            <a href="#roadmap" class="cta-secondary">See the Roadmap</a>
         </div>
     </section>
 
-    <!-- Supported companies auto-scrolling banner -->
-    <section class="supported-banner">
+    <!-- Standards and frameworks alignment banner -->
+    <section class="supported-banner" aria-label="Standards and frameworks Quantsiv aligns to">
         <div class="banner-track">
             <!-- Two identical halves. The track slides by exactly one half (-50%),
-                 so the loop is seamless. Each half repeats the name list four
+                 so the loop is seamless. Each half repeats the list four
                  times (~8,000px) so the track always outruns the viewport, even
                  on an ultra-wide monitor at low browser zoom - if a half were
                  narrower than the banner, a blank gap would travel through it.
                  The second half is decorative. -->
             <div class="banner-group">
-                <span class="banner-item">Fortune 500 Bank</span>
-                <span class="banner-item">Global Tech Leader</span>
-                <span class="banner-item">Healthcare Provider</span>
-                <span class="banner-item">Financial Services Corp</span>
-                <span class="banner-item">Government Agency</span>
-                <span class="banner-item">Retail Chain</span>
-                <span class="banner-item">Manufacturing Giant</span>
-                <span class="banner-item">Telecom Provider</span>
-                <span class="banner-item">Fortune 500 Bank</span>
-                <span class="banner-item">Global Tech Leader</span>
-                <span class="banner-item">Healthcare Provider</span>
-                <span class="banner-item">Financial Services Corp</span>
-                <span class="banner-item">Government Agency</span>
-                <span class="banner-item">Retail Chain</span>
-                <span class="banner-item">Manufacturing Giant</span>
-                <span class="banner-item">Telecom Provider</span>
-                <span class="banner-item">Fortune 500 Bank</span>
-                <span class="banner-item">Global Tech Leader</span>
-                <span class="banner-item">Healthcare Provider</span>
-                <span class="banner-item">Financial Services Corp</span>
-                <span class="banner-item">Government Agency</span>
-                <span class="banner-item">Retail Chain</span>
-                <span class="banner-item">Manufacturing Giant</span>
-                <span class="banner-item">Telecom Provider</span>
-                <span class="banner-item">Fortune 500 Bank</span>
-                <span class="banner-item">Global Tech Leader</span>
-                <span class="banner-item">Healthcare Provider</span>
-                <span class="banner-item">Financial Services Corp</span>
-                <span class="banner-item">Government Agency</span>
-                <span class="banner-item">Retail Chain</span>
-                <span class="banner-item">Manufacturing Giant</span>
-                <span class="banner-item">Telecom Provider</span>
+                <span class="banner-item">NIST FIPS 203 / 204 / 205</span>
+                <span class="banner-item">CycloneDX CBOM</span>
+                <span class="banner-item">EO 14412</span>
+                <span class="banner-item">OMB M-26-15</span>
+                <span class="banner-item">NIST IR 8547</span>
+                <span class="banner-item">NSA CNSA 2.0</span>
+                <span class="banner-item">CISA PQC Guidance</span>
+                <span class="banner-item">G7 Quantum Roadmap</span>
+                <span class="banner-item">NIST FIPS 203 / 204 / 205</span>
+                <span class="banner-item">CycloneDX CBOM</span>
+                <span class="banner-item">EO 14412</span>
+                <span class="banner-item">OMB M-26-15</span>
+                <span class="banner-item">NIST IR 8547</span>
+                <span class="banner-item">NSA CNSA 2.0</span>
+                <span class="banner-item">CISA PQC Guidance</span>
+                <span class="banner-item">G7 Quantum Roadmap</span>
+                <span class="banner-item">NIST FIPS 203 / 204 / 205</span>
+                <span class="banner-item">CycloneDX CBOM</span>
+                <span class="banner-item">EO 14412</span>
+                <span class="banner-item">OMB M-26-15</span>
+                <span class="banner-item">NIST IR 8547</span>
+                <span class="banner-item">NSA CNSA 2.0</span>
+                <span class="banner-item">CISA PQC Guidance</span>
+                <span class="banner-item">G7 Quantum Roadmap</span>
+                <span class="banner-item">NIST FIPS 203 / 204 / 205</span>
+                <span class="banner-item">CycloneDX CBOM</span>
+                <span class="banner-item">EO 14412</span>
+                <span class="banner-item">OMB M-26-15</span>
+                <span class="banner-item">NIST IR 8547</span>
+                <span class="banner-item">NSA CNSA 2.0</span>
+                <span class="banner-item">CISA PQC Guidance</span>
+                <span class="banner-item">G7 Quantum Roadmap</span>
             </div>
             <div class="banner-group" aria-hidden="true">
-                <span class="banner-item">Fortune 500 Bank</span>
-                <span class="banner-item">Global Tech Leader</span>
-                <span class="banner-item">Healthcare Provider</span>
-                <span class="banner-item">Financial Services Corp</span>
-                <span class="banner-item">Government Agency</span>
-                <span class="banner-item">Retail Chain</span>
-                <span class="banner-item">Manufacturing Giant</span>
-                <span class="banner-item">Telecom Provider</span>
-                <span class="banner-item">Fortune 500 Bank</span>
-                <span class="banner-item">Global Tech Leader</span>
-                <span class="banner-item">Healthcare Provider</span>
-                <span class="banner-item">Financial Services Corp</span>
-                <span class="banner-item">Government Agency</span>
-                <span class="banner-item">Retail Chain</span>
-                <span class="banner-item">Manufacturing Giant</span>
-                <span class="banner-item">Telecom Provider</span>
-                <span class="banner-item">Fortune 500 Bank</span>
-                <span class="banner-item">Global Tech Leader</span>
-                <span class="banner-item">Healthcare Provider</span>
-                <span class="banner-item">Financial Services Corp</span>
-                <span class="banner-item">Government Agency</span>
-                <span class="banner-item">Retail Chain</span>
-                <span class="banner-item">Manufacturing Giant</span>
-                <span class="banner-item">Telecom Provider</span>
-                <span class="banner-item">Fortune 500 Bank</span>
-                <span class="banner-item">Global Tech Leader</span>
-                <span class="banner-item">Healthcare Provider</span>
-                <span class="banner-item">Financial Services Corp</span>
-                <span class="banner-item">Government Agency</span>
-                <span class="banner-item">Retail Chain</span>
-                <span class="banner-item">Manufacturing Giant</span>
-                <span class="banner-item">Telecom Provider</span>
+                <span class="banner-item">NIST FIPS 203 / 204 / 205</span>
+                <span class="banner-item">CycloneDX CBOM</span>
+                <span class="banner-item">EO 14412</span>
+                <span class="banner-item">OMB M-26-15</span>
+                <span class="banner-item">NIST IR 8547</span>
+                <span class="banner-item">NSA CNSA 2.0</span>
+                <span class="banner-item">CISA PQC Guidance</span>
+                <span class="banner-item">G7 Quantum Roadmap</span>
+                <span class="banner-item">NIST FIPS 203 / 204 / 205</span>
+                <span class="banner-item">CycloneDX CBOM</span>
+                <span class="banner-item">EO 14412</span>
+                <span class="banner-item">OMB M-26-15</span>
+                <span class="banner-item">NIST IR 8547</span>
+                <span class="banner-item">NSA CNSA 2.0</span>
+                <span class="banner-item">CISA PQC Guidance</span>
+                <span class="banner-item">G7 Quantum Roadmap</span>
+                <span class="banner-item">NIST FIPS 203 / 204 / 205</span>
+                <span class="banner-item">CycloneDX CBOM</span>
+                <span class="banner-item">EO 14412</span>
+                <span class="banner-item">OMB M-26-15</span>
+                <span class="banner-item">NIST IR 8547</span>
+                <span class="banner-item">NSA CNSA 2.0</span>
+                <span class="banner-item">CISA PQC Guidance</span>
+                <span class="banner-item">G7 Quantum Roadmap</span>
+                <span class="banner-item">NIST FIPS 203 / 204 / 205</span>
+                <span class="banner-item">CycloneDX CBOM</span>
+                <span class="banner-item">EO 14412</span>
+                <span class="banner-item">OMB M-26-15</span>
+                <span class="banner-item">NIST IR 8547</span>
+                <span class="banner-item">NSA CNSA 2.0</span>
+                <span class="banner-item">CISA PQC Guidance</span>
+                <span class="banner-item">G7 Quantum Roadmap</span>
             </div>
         </div>
     </section>
 
     <!-- Security statement -->
     <section class="security-statement">
-        <p>Stop worrying about quantum threats. Quantsiv provides continuous, automated protection that finds and prioritizes quantum-vulnerable cryptography in your codebase so you can focus on building, not security.</p>
+        <p>The migration deadline is fixed. Your cryptographic inventory is not. Quantsiv closes the gap - continuously scanning your code so you know exactly what is exposed, how long it stays exposed, and what to replace it with.</p>
     </section>
 
-    <!-- Features section -->
-    <section id="features" class="section">
-        <h2>Features</h2>
-        <div class="features-grid">
-            <div class="feature-card">
-                <img src="assets/threat-intelligence.svg" alt="Threat Intelligence Illustration" class="feature-icon">
-                <h3>AI Threat Intelligence</h3>
-                <p>Leverage machine learning to detect anomalies before they become incidents. Our AI analyzes patterns across your infrastructure to identify emerging threats in real-time.</p>
+    <!-- The Threat section -->
+    <section id="threat" class="section section-alt">
+        <h2>Harvest Now, Decrypt Later</h2>
+        <p class="section-subheading">The breach has already happened. We just cannot read it yet.</p>
+
+        <div class="threat-grid">
+            <div class="threat-card">
+                <h3>The attack is storage, not computation</h3>
+                <p>An adversary does not need a quantum computer today. They need only to record your encrypted traffic and exfiltrated data now, then decrypt the archive once a cryptographically relevant quantum computer exists. RSA, ECDSA, Diffie-Hellman and DSA all fall to Shor's algorithm.</p>
             </div>
-            <div class="feature-card">
-                <img src="assets/automated-response.svg" alt="Automated Response Illustration" class="feature-icon">
-                <h3>Automated Response</h3>
-                <p>Orchestrate containment and remediation across your infrastructure. Pre-built playbooks execute actions without manual intervention when threats are detected.</p>
+            <div class="threat-card">
+                <h3>The real deadline is your data's lifetime</h3>
+                <p>What matters is not when the quantum computer arrives, but how long your data must stay secret. A system with a 25-year confidentiality requirement is already compromised if its traffic was captured yesterday. Health records, financial data, government communications and trade secrets are all in scope today.</p>
             </div>
-            <div class="feature-card">
-                <img src="assets/compliance.svg" alt="Compliance Illustration" class="feature-icon">
-                <h3>Continuous Compliance</h3>
-                <p>Stay audit‑ready with automated evidence collection and reporting. Generate compliance reports for SOC 2, ISO 27001, HIPAA, and other frameworks with one click.</p>
+            <div class="threat-card">
+                <h3>The exposure grows fastest in AI-written code</h3>
+                <p>Code assistants pick cryptographic primitives by pattern completion - RSA-2048, default JWT signing algorithms, MD5, deprecated TLS settings. It compiles, it passes tests, and it is quantum-vulnerable. Vibe-coded applications expand the attack surface faster than security teams can review it.</p>
             </div>
         </div>
+
+        <div class="hndl-timeline">
+            <div class="hndl-step">
+                <span class="hndl-year">Today</span>
+                <h4>Capture</h4>
+                <p>Encrypted traffic and stored ciphertext are recorded and archived by adversaries.</p>
+            </div>
+            <div class="hndl-arrow" aria-hidden="true">&rarr;</div>
+            <div class="hndl-step">
+                <span class="hndl-year">2030 &ndash; 2035</span>
+                <h4>Decrypt</h4>
+                <p>A cryptographically relevant quantum computer breaks the archived public-key cryptography.</p>
+            </div>
+            <div class="hndl-arrow" aria-hidden="true">&rarr;</div>
+            <div class="hndl-step">
+                <span class="hndl-year">Then</span>
+                <h4>Expose</h4>
+                <p>Everything protected by RSA or ECC becomes readable - including data with years of confidentiality left.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Regulatory section -->
+    <section id="compliance" class="section">
+        <h2>The Deadline Is Already Set</h2>
+        <p class="section-subheading">This is not a speculative timeline. Every major standards body and government has published dated migration requirements.</p>
+
+        <ol class="reg-timeline">
+            <li class="reg-item">
+                <span class="reg-date">Aug 2024</span>
+                <div class="reg-body">
+                    <h4>NIST finalizes the post-quantum standards</h4>
+                    <p>FIPS 203 (ML-KEM) for key establishment, FIPS 204 (ML-DSA) and FIPS 205 (SLH-DSA) for digital signatures. The replacement algorithms now exist.</p>
+                </div>
+            </li>
+            <li class="reg-item">
+                <span class="reg-date">Nov 2024</span>
+                <div class="reg-body">
+                    <h4>NIST IR 8547 sets the deprecation clock</h4>
+                    <p>RSA-2048 and P-256 are deprecated for new systems by 2030, and quantum-vulnerable algorithms are disallowed in NIST standards by 2035.</p>
+                </div>
+            </li>
+            <li class="reg-item">
+                <span class="reg-date">22 Jun 2026</span>
+                <div class="reg-body">
+                    <h4>Executive Order 14412 names the threat</h4>
+                    <p>The order describes adversaries "collecting United States information now, and decrypting it later once large-scale quantum computers are operational" - harvest now, decrypt later, stated as federal policy. It sets 31 Dec 2030 for PQC key establishment and 31 Dec 2031 for digital signatures on high-value and high-impact systems.</p>
+                </div>
+            </li>
+            <li class="reg-item">
+                <span class="reg-date">24 Jun 2026</span>
+                <div class="reg-body">
+                    <h4>OMB M-26-15 mandates a central CBOM</h4>
+                    <p>A five-phase federal migration running 2026 to 2035, requiring agencies to build cryptographic inventories and populate a central Cryptographic Bill of Materials. Agency migration plans are due 22 October 2026.</p>
+                </div>
+            </li>
+            <li class="reg-item">
+                <span class="reg-date">~Mar 2027</span>
+                <div class="reg-body">
+                    <h4>CBOM minimum elements published</h4>
+                    <p>EO 14412 gives CISA and NIST 270 days to define the minimum elements of a Cryptographic Bill of Materials. Quantsiv already emits CycloneDX 1.6 CBOMs, so alignment is a mapping exercise rather than a rebuild.</p>
+                </div>
+            </li>
+            <li class="reg-item">
+                <span class="reg-date">2030 &ndash; 2035</span>
+                <div class="reg-body">
+                    <h4>Compliance becomes mandatory</h4>
+                    <p>Key establishment by end-2030, signatures by end-2031, and full migration by 2035. National Security Systems follow NSA CNSA 2.0 to a 2033 deadline, and contractors are pulled in through federal acquisition rules.</p>
+                </div>
+            </li>
+        </ol>
+
+        <p class="sources">
+            Sources:
+            <a href="https://www.whitehouse.gov/presidential-actions/2026/06/securing-the-nation-against-advanced-cryptographic-attacks/" target="_blank" rel="noopener">EO 14412</a>,
+            <a href="https://www.whitehouse.gov/wp-content/uploads/2026/06/M-26-15-Execution-of-the-Migration-to-Post-Quantum-Cryptography.pdf" target="_blank" rel="noopener">OMB M-26-15</a>,
+            <a href="https://nvlpubs.nist.gov/nistpubs/ir/2024/NIST.IR.8547.ipd.pdf" target="_blank" rel="noopener">NIST IR 8547</a>,
+            <a href="https://www.cisa.gov/topics/risk-management/quantum" target="_blank" rel="noopener">CISA Post-Quantum Cryptography Initiative</a>,
+            <a href="https://www.nsa.gov/Cybersecurity/Post-Quantum-Cybersecurity-Resources/" target="_blank" rel="noopener">NSA CNSA 2.0</a>.
+        </p>
     </section>
 
     <!-- How it works section -->
-    <section id="how-it-works" class="section">
+    <section id="how-it-works" class="section section-alt">
         <h2>How Quantsiv Works</h2>
-        <p class="section-subheading">From code scanning to actionable insights in 90 seconds</p>
+        <p class="section-subheading">From code scanning to an audit-ready CBOM in 90 seconds</p>
         <div class="process-steps">
             <div class="step">
                 <h3>1. Discover</h3>
-                <p>Quantsiv automatically scans your entire infrastructure - including source code, certificates, cloud resources, and configuration files - to build a complete inventory of your cryptographic assets. Our agentless approach means no installation required.</p>
+                <p>Quantsiv scans your repositories for cryptographic usage - source code, dependencies, configuration files, certificates and live TLS endpoints - and builds a complete inventory of your cryptographic assets. Agentless, installed through a GitHub App or Action, with no changes to your runtime.</p>
             </div>
             <div class="step">
                 <h3>2. Analyze</h3>
-                <p>Our quantum-risk engine analyzes each cryptographic finding against known quantum-vulnerable algorithms (RSA, ECDSA, Diffie-Hellman) using Shor's algorithm projections. We calculate exposure based on data sensitivity, public accessibility, and algorithm key strength.</p>
+                <p>Each finding is evaluated against the quantum-vulnerable algorithms - RSA, ECDSA, Diffie-Hellman, DSA - and scored on two axes: cryptographic severity, and harvest-now-decrypt-later exposure, meaning how long the protected data must stay secret against the projected arrival of a quantum computer.</p>
             </div>
             <div class="step">
                 <h3>3. Prioritize</h3>
-                <p>Results are automatically ranked by risk level using our proprietary scoring system, giving you a clear, actionable remediation roadmap instead of an overwhelming list of vulnerabilities. Critical findings are highlighted for immediate attention.</p>
+                <p>Results are ranked so remediation follows business risk rather than raw finding count. A 30-year health record and a short-lived session token are not the same exposure, even when both use RSA. Every finding carries a plain-English explanation and its recommended replacement.</p>
             </div>
             <div class="step">
-                <h3>4. Monitor</h3>
-                <p>Continuous monitoring alerts you to new quantum-vulnerable code or configurations as they're introduced in your codebase, preventing regression while you address existing findings. Get real-time alerts via email, Slack, or dashboard notifications.</p>
+                <h3>4. Prove</h3>
+                <p>Export a CycloneDX 1.6 Cryptographic Bill of Materials and an audit-ready compliance report citing the authority behind each requirement. Continuous monitoring flags new quantum-vulnerable code the moment it is introduced, so the migration does not regress.</p>
             </div>
         </div>
-        
+
         <div class="process-footer">
             <p class="process-note"></p>
         </div>
@@ -170,36 +252,93 @@
         <h2>Capabilities</h2>
         <div class="capabilities-grid">
             <div class="capability-item">
-                <h3>Real-time Threat Detection</h3>
-                <p>Machine learning models analyze network traffic, user behavior, and system logs to identify threats as they emerge.</p>
+                <h3>Cryptographic Bill of Materials</h3>
+                <p>CycloneDX 1.6 CBOM output for every repository - the inventory artifact EO 14412 and OMB M-26-15 require.</p>
             </div>
             <div class="capability-item">
-                <h3>Adaptive Defense</h3>
-                <p>Defense mechanisms evolve based on threat intelligence and observed attack patterns.</p>
+                <h3>HNDL Risk Scoring</h3>
+                <p>Findings ranked by data confidentiality lifetime against the quantum horizon, not by algorithm name alone.</p>
             </div>
             <div class="capability-item">
-                <h3>Automated Incident Response</h3>
-                <p>Pre-built playbooks execute containment and remediation actions without manual intervention.</p>
+                <h3>Source and TLS Detection</h3>
+                <p>AST-level scanning of Python, Java and Go via cbomkit-lib, plus certificate and protocol analysis of live endpoints via sslyze.</p>
             </div>
             <div class="capability-item">
-                <h3>Compliance Automation</h3>
-                <p>Continuous evidence collection and reporting for SOC 2, ISO 27001, HIPAA, and other frameworks.</p>
+                <h3>CI/CD Enforcement</h3>
+                <p>A GitHub Action that fails the build when new quantum-vulnerable cryptography is introduced, with SARIF results in your Code Scanning tab.</p>
             </div>
             <div class="capability-item">
-                <h3>Enterprise Scale</h3>
-                <p>Designed to handle the volume and complexity of Fortune 500 environments.</p>
+                <h3>Migration Guidance</h3>
+                <p>Concrete replacements for every finding - ML-KEM for key establishment, ML-DSA or SLH-DSA for signatures - with hybrid deployment patterns for backward compatibility.</p>
             </div>
             <div class="capability-item">
-                <h3>Zero Trust Architecture</h3>
-                <p>Never trust, always verify approach to securing all access points and data flows.</p>
+                <h3>Audit-Ready Reporting</h3>
+                <p>One-click compliance reports that map each finding and each remediation to its regulatory driver.</p>
             </div>
+        </div>
+    </section>
+
+    <!-- Roadmap section -->
+    <section id="roadmap" class="section section-alt">
+        <h2>Roadmap</h2>
+        <p class="section-subheading">Sequenced to land capability ahead of the deadlines that force the migration.</p>
+
+        <div class="roadmap-grid">
+            <article class="roadmap-phase">
+                <span class="phase-tag">Phase 1 &middot; Now &rarr; 2027</span>
+                <h3>Audit</h3>
+                <p>Deploy the MVP into CI/CD pipelines and map the full cryptographic footprint of every application.</p>
+                <ul class="phase-list">
+                    <li>Pipeline integration for push, PR and scheduled scans</li>
+                    <li>Automated footprint mapping across code, dependencies, config and TLS</li>
+                    <li>HNDL-specific vulnerability identification and prioritization</li>
+                    <li>CBOM output aligned to the March 2027 minimum-element standard</li>
+                    <li>JavaScript/TypeScript, container and cloud coverage</li>
+                </ul>
+            </article>
+
+            <article class="roadmap-phase">
+                <span class="phase-tag">Phase 2 &middot; 2027 &rarr; 2028</span>
+                <h3>Migrate</h3>
+                <p>Close the loop from finding to fix with automated remediation and hybrid cryptography.</p>
+                <ul class="phase-list">
+                    <li>Automated migration of vulnerable cryptographic dependencies</li>
+                    <li>Hybrid ciphers running classical and post-quantum algorithms in parallel</li>
+                    <li>Generated pull requests with diffs, rationale and cited authority</li>
+                    <li>Rapid validation suites proving updates do not break functionality</li>
+                </ul>
+            </article>
+
+            <article class="roadmap-phase">
+                <span class="phase-tag">Phase 3 &middot; 2028 &rarr; 2030</span>
+                <h3>Agentic Crypto-Agility</h3>
+                <p>Scale to distributed enterprise estates and let approved migrations execute autonomously in the pipeline.</p>
+                <ul class="phase-list">
+                    <li>Crypto-agile architecture across clouds, PKI, KMS and service meshes</li>
+                    <li>AI agents that select the optimal PQC algorithm for each use case</li>
+                    <li>Autonomous execution and verification of approved migrations in minutes</li>
+                    <li>Crypto-agility scorecard measuring migration readiness</li>
+                </ul>
+            </article>
+
+            <article class="roadmap-phase">
+                <span class="phase-tag">Phase 4 &middot; 2030 &rarr; 2035</span>
+                <h3>Platform Consolidation</h3>
+                <p>One deployable unit covering audit, migration and optimized post-quantum cryptography.</p>
+                <ul class="phase-list">
+                    <li>Dedicated cryptographic research team</li>
+                    <li>High-performance, constant-time implementations of standardized PQC primitives</li>
+                    <li>All-in-one plugin consolidating audit, migration and execution</li>
+                    <li>Managed PQC service, multi-region deployment and SOC 2 / ISO 27001</li>
+                </ul>
+            </article>
         </div>
     </section>
 
     <!-- Newsletter section -->
     <section class="newsletter">
         <h2>Stay Informed</h2>
-        <p>Get the latest updates on enterprise cybersecurity threats and defenses.</p>
+        <p>Get updates on post-quantum migration deadlines, standards, and Quantsiv releases.</p>
         <form id="contact-form">
             <input type="email" placeholder="Your work email" required>
             <button type="submit">Join the Waitlist</button>
@@ -208,8 +347,8 @@
 
     <!-- Footer -->
     <footer>
-        <div>© 2026 Quantsiv. All rights reserved.</div>
-        <div>Stealth Mode • GitHub: lcorsini</div>
+        <div>&copy; 2026 Quantsiv. All rights reserved.</div>
+        <div>Stealth Mode &bull; GitHub: lcorsini</div>
     </footer>
 
     <script src="script.js"></script>
