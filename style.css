@@ -10,11 +10,16 @@
     /* Typography */
     --font-primary: 'Courier New', Courier, monospace;
     --font-size-base: 16px;
+    --font-size-sm: 0.875rem;
     --font-size-lg: 1.25rem;
     --font-size-xl: 1.5rem;
     --font-size-2xl: 2rem;
     --font-size-3xl: 2.5rem;
     --font-size-4xl: 3rem;
+
+    /* Shared card grid (Features / How it works / Capabilities) */
+    --grid-max: 1200px;
+    --grid-gap: 2rem;
 }
 
 /* Base Styles */
@@ -35,7 +40,7 @@ body {
 /* Header Layout */
 .site-header {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     padding: 2rem;
     border-bottom: 1px solid var(--color-gray-medium);
@@ -48,6 +53,25 @@ body {
 .nav-right {
     display: flex;
     align-items: center;
+}
+
+.logo {
+    height: 6rem;
+    width: auto;
+    display: inline-block;
+}
+
+.brand-center {
+    flex-shrink: 0;
+}
+
+.nav-center {
+    flex-grow: 1;
+    text-align: center;
+}
+
+.nav-list {
+    justify-content: center;
 }
 
 .logo-left {
@@ -230,97 +254,58 @@ body {
     margin-right: auto;
 }
 
-/* Features Section */
-.features-grid {
-    display: flex;
-    gap: 2rem;
-    justify-content: center;
-    flex-wrap: wrap;
-    max-width: 1200px;
+/* Card grids - Features, How it works and Capabilities share one grid system */
+.features-grid,
+.capabilities-grid,
+.process-steps {
+    display: grid;
+    gap: var(--grid-gap);
+    max-width: var(--grid-max);
     margin: 0 auto;
 }
 
-.feature-card {
+.features-grid,
+.capabilities-grid {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+/* 2x2: steps 1 + 2 on the top row, 3 + 4 on the bottom row.
+   The container is narrowed so a 2-up cell ends up exactly as wide as a
+   3-up cell in the sections above. */
+.process-steps {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: calc((var(--grid-max) - 2 * var(--grid-gap)) / 3 * 2 + var(--grid-gap));
+}
+
+/* Cards - identical box, padding and ease-out hover for all three sections */
+.feature-card,
+.step,
+.capability-item {
     background-color: var(--color-gray-light);
     border: 1px solid var(--color-gray-medium);
     border-radius: 0;
     padding: 2.5rem;
-    width: 280px;
     text-align: left;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
 }
 
-.feature-card:hover {
+.feature-card:hover,
+.step:hover,
+.capability-item:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
-.feature-card h3 {
+.feature-card h3,
+.step h3,
+.capability-item h3 {
     font-size: var(--font-size-xl);
     margin-bottom: 1rem;
     color: var(--color-black);
 }
 
-.feature-card p {
-    font-size: var(--font-size-base);
-    color: var(--color-gray-dark);
-    line-height: 1.6;
-}
-
-/* How it works section */
-.process-steps {
-    display: flex;
-    gap: 2rem;
-    justify-content: center;
-    flex-wrap: wrap;
-    max-width: 1000px;
-    margin: 0 auto;
-}
-
-.step {
-    background-color: var(--color-gray-light);
-    border: 1px solid var(--color-gray-medium);
-    border-radius: 0;
-    padding: 2rem;
-    width: 280px;
-    text-align: left;
-}
-
-.step h3 {
-    font-size: var(--font-size-lg);
-    margin-bottom: 1rem;
-    color: var(--color-black);
-}
-
-.step p {
-    font-size: var(--font-size-base);
-    color: var(--color-gray-dark);
-    line-height: 1.6;
-}
-
-/* Capabilities Section */
-.capabilities-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.capability-item {
-    background-color: var(--color-gray-light);
-    border: 1px solid var(--color-gray-medium);
-    border-radius: 0;
-    padding: 2rem;
-    text-align: left;
-}
-
-.capability-item h3 {
-    font-size: var(--font-size-lg);
-    margin-bottom: 1rem;
-    color: var(--color-black);
-}
-
+.feature-card p,
+.step p,
 .capability-item p {
     font-size: var(--font-size-base);
     color: var(--color-gray-dark);
@@ -470,19 +455,9 @@ html {
         margin-bottom: 2rem;
     }
 
-    .feature-card,
-    .step {
-        width: 100%;
-        max-width: 320px;
-        margin: 0 auto 1.5rem;
-    }
-
     .features-grid,
+    .capabilities-grid,
     .process-steps {
-        gap: 1.5rem;
-    }
-
-    .capabilities-grid {
         grid-template-columns: 1fr;
         gap: 1.5rem;
     }
@@ -561,10 +536,7 @@ html {
     }
 
     .feature-card,
-    .step {
-        padding: 2rem;
-    }
-
+    .step,
     .capability-item {
         padding: 1.5rem;
     }
@@ -579,64 +551,3 @@ html {
     }
 }
 
-/* Add font-size-sm variable */
-:root {
-    /* Black and White Color Scheme */
-    --color-black: #000000;
-    --color-white: #ffffff;
-    --color-gray-light: #f5f5f5;
-    --color-gray-medium: #cccccc;
-    --color-gray-dark: #666666;
-
-    /* Typography */
-    --font-primary: 'Courier New', Courier, monospace;
-    --font-size-base: 16px;
-    --font-size-sm: 0.875rem;
-    --font-size-lg: 1.25rem;
-    --font-size-xl: 1.5rem;
-    --font-size-2xl: 2rem;
-    --font-size-3xl: 2.5rem;
-    --font-size-4xl: 3rem;
-}
-/* Logo styles */
-.logo {
-    height: 2rem;
-    width: auto;
-    display: inline-block;
-}
-
-/* Header layout adjustments */
-.site-header {
-    justify-content: flex-start;
-    align-items: center;
-}
-.brand-center {
-    flex-shrink: 0;
-}
-.nav-center {
-    flex-grow: 1;
-    text-align: center;
-}
-.nav-list {
-    justify-content: center;
-}
-
-/* Process steps stacked horizontal rectangles */
-.process-steps {
-    flex-direction: column;
-    align-items: stretch;
-}
-.step {
-    width: 100%;
-    max-width: none;
-}
-
-/* Process steps like capabilities rectangles */
-.process-steps {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-}
-.step {
-    width: 100%;
-}
