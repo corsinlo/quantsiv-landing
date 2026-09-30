@@ -620,3 +620,13 @@ html {
 .nav-list {
     justify-content: center;
 }
+
+/* Process steps stacked horizontal rectangles */
+.process-steps {
+    flex-direction: column;
+    align-items: stretch;
+}
+.step {
+    width: 100%;
+    max-width: none;
+}
