@@ -180,10 +180,22 @@ body {
     position: relative;
 }
 
+/* Two identical halves sit side by side; sliding the track by exactly half its
+   width lands the second half where the first one started, so the loop has no
+   visible jump. The trailing padding-right provides the gap between the halves
+   and travels with them. Each half is far wider than any viewport, so the band
+   is never left with a blank stretch. The duration is scaled to that longer
+   track so the items still drift at a calm, readable pace. */
 .banner-track {
     display: flex;
+    width: max-content;
+    animation: marquee 120s linear infinite;
+}
+
+.banner-group {
+    display: flex;
     gap: 3rem;
-    animation: marquee 20s linear infinite;
+    padding-right: 3rem;
     white-space: nowrap;
 }
 
@@ -194,11 +206,35 @@ body {
 }
 
 @keyframes marquee {
-    0% {
+    from {
         transform: translateX(0);
     }
-    100% {
+    to {
         transform: translateX(-50%);
+    }
+}
+
+/* Fade the slider out at both edges on larger screens */
+@media (min-width: 769px) {
+    .supported-banner::before,
+    .supported-banner::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 6rem;
+        z-index: 2;
+        pointer-events: none;
+    }
+
+    .supported-banner::before {
+        left: 0;
+        background: linear-gradient(to right, var(--color-gray-light), rgba(245, 245, 245, 0));
+    }
+
+    .supported-banner::after {
+        right: 0;
+        background: linear-gradient(to left, var(--color-gray-light), rgba(245, 245, 245, 0));
     }
 }
 
@@ -490,9 +526,13 @@ html {
         padding: 0.75rem 0;
     }
 
-    .banner-track {
+    .banner-group {
         gap: 2rem;
-        animation: marquee 15s linear infinite;
+        padding-right: 2rem;
+    }
+
+    .banner-track {
+        animation: marquee 90s linear infinite;
     }
 
     .banner-item {

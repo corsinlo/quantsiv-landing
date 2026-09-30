@@ -34,12 +34,10 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // Marquee effect for supported companies banner
+    // The track already holds two identical groups in the markup, so the
+    // -50% keyframe loops seamlessly without cloning anything in here.
     const bannerTrack = document.querySelector('.banner-track');
     if (bannerTrack) {
-        // Clone the banner items for seamless scrolling
-        const bannerItems = bannerTrack.innerHTML;
-        bannerTrack.innerHTML += bannerItems;
-
         // Pause on hover
         bannerTrack.addEventListener('mouseenter', () => {
             bannerTrack.style.animationPlayState = 'paused';
