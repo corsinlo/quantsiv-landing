@@ -20,16 +20,33 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Form handling
     const form = document.getElementById('contact-form');
+    const formMessage = document.getElementById('form-message');
     if (form) {
         form.addEventListener('submit', function (e) {
             e.preventDefault();
-            const email = form.querySelector('input[type="email"]').value.trim();
-            if (email) {
-                alert('Thank you! We\\'ve recorded your interest: ' + email);
-                form.reset();
-            } else {
-                alert('Please enter a valid email address.');
+            const emailInput = form.querySelector('input[type="email"]');
+            const email = emailInput.value.trim();
+
+            // Clear previous messages
+            formMessage.style.display = 'none';
+            formMessage.textContent = '';
+            emailInput.classList.remove('error');
+
+            // Simple email validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                formMessage.textContent = 'Please enter a valid email address.';
+                formMessage.style.display = 'block';
+                formMessage.style.color = 'var(--color-black)';
+                emailInput.classList.add('error');
+                return;
             }
+
+            // Success case
+            formMessage.textContent = 'Thank you! We\'ve recorded your interest: ' + email;
+            formMessage.style.display = 'block';
+            formMessage.style.color = 'var(--color-black)';
+            form.reset();
         });
     }
 

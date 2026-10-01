@@ -5,11 +5,11 @@
     --color-white: #ffffff;
     --color-gray-light: #f5f5f5;
     --color-gray-medium: #cccccc;
-    --color-gray-dark: #666666;
+    --color-gray-dark: #2e2e2e;
 
     /* Typography */
     --font-primary: 'Courier New', Courier, monospace;
-    --font-size-base: 16px;
+    --font-size-base: 1rem; /* Now relative to browser default */
     --font-size-sm: 0.875rem;
     --font-size-lg: 1.25rem;
     --font-size-xl: 1.5rem;
@@ -27,6 +27,18 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+html {
+    font-size: 100%; /* Respects browser's default font size */
+}
+
+body {
+    font-size: 1rem; /* Uses browser's default size */
+    font-family: var(--font-primary);
+    background-color: var(--color-white);
+    color: var(--color-black);
+    line-height: 1.6;
 }
 
 body {
@@ -102,6 +114,8 @@ body {
     color: var(--color-black);
     font-weight: 500;
     transition: opacity 0.3s ease;
+    padding: 1rem 0;
+    display: inline-block;
 }
 
 .nav-link:hover {
@@ -211,6 +225,13 @@ body {
     }
     to {
         transform: translateX(-50%);
+    }
+}
+
+/* Respect reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    .banner-track {
+        animation: none;
     }
 }
 
@@ -388,6 +409,19 @@ body {
 .newsletter input:focus {
     outline: none;
     border-color: var(--color-black);
+}
+
+.newsletter input.error {
+    border-color: #dc3545; /* Bootstrap danger red */
+    box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
+}
+
+.form-message {
+    margin-top: 0.5rem;
+    min-height: 2rem;
+    display: flex;
+    align-items: center;
+    font-size: var(--font-size-sm);
 }
 
 .newsletter button {
