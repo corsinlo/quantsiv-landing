@@ -1,0 +1,14 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Checklist background -->
+  <rect x="8" y="8" width="48" height="48" stroke="black" stroke-width="2"/>
+  <!-- Checklist items -->
+  <path d="M16 24L20 28L28 20" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M16 32L20 36L28 28" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M16 40L20 44L28 36" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Document -->
+  <rect x="24" y="16" width="28" height="32" stroke="black" stroke-width="2"/>
+  <line x1="24" y1="24" x2="52" y2="24" stroke="black" stroke-width="1"/>
+  <line x1="24" y1="32" x2="40" y2="32" stroke="black" stroke-width="1"/>
+  <!-- Checkmark on document -->
+  <path d="M28 32L32 36L40 24" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

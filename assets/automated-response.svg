@@ -1,0 +1,13 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Shield background -->
+  <path d="M32 4L60 20V44L32 58L4 44V20Z" stroke="black" stroke-width="2" fill="none"/>
+  <!-- Auto arrows -->
+  <path d="M20 28H24" stroke="black" stroke-width="1.5"/>
+  <path d="M40 28H44" stroke="black" stroke-width="1.5"/>
+  <path d="M28 20V24" stroke="black" stroke-width="1.5"/>
+  <path d="M36 20V24" stroke="black" stroke-width="1.5"/>
+  <!-- Checkmark -->
+  <path d="M16 32L24 40L48 16" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Center play button -->
+  <polygon points="28,24 40,32 28,40" fill="black"/>
+</svg>

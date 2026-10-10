@@ -1,0 +1,872 @@
+/* Quantsiv Landing Page - Redesign */
+:root {
+    /* Black and White Color Scheme */
+    --color-black: #000000;
+    --color-white: #ffffff;
+    --color-gray-light: #f5f5f5;
+    --color-gray-medium: #cccccc;
+    --color-gray-dark: #2e2e2e;
+
+    /* Typography */
+    --font-primary: 'Courier New', Courier, monospace;
+    --font-size-base: 1rem; /* Now relative to browser default */
+    --font-size-sm: 0.875rem;
+    --font-size-lg: 1.25rem;
+    --font-size-xl: 1.5rem;
+    --font-size-2xl: 2rem;
+    --font-size-3xl: 2.5rem;
+    --font-size-4xl: 3rem;
+
+    /* Shared card grid (Features / How it works / Capabilities) */
+    --grid-max: 1200px;
+    --grid-gap: 2rem;
+}
+
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 100%; /* Respects browser's default font size */
+}
+
+body {
+    font-size: 1rem; /* Uses browser's default size */
+    font-family: var(--font-primary);
+    background-color: var(--color-white);
+    color: var(--color-black);
+    line-height: 1.6;
+}
+
+body {
+    font-family: var(--font-primary);
+    font-size: var(--font-size-base);
+    background-color: var(--color-white);
+    color: var(--color-black);
+    line-height: 1.6;
+}
+
+/* Header Layout */
+.site-header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 2rem;
+    border-bottom: 1px solid var(--color-gray-medium);
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.logo-left,
+.brand-center,
+.nav-right {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    height: 6rem;
+    width: auto;
+    display: inline-block;
+}
+
+.brand-center {
+    flex-shrink: 0;
+}
+
+.nav-center {
+    flex-grow: 1;
+    text-align: center;
+}
+
+.nav-list {
+    justify-content: center;
+}
+
+.logo-left {
+    font-weight: bold;
+    font-size: var(--font-size-xl);
+    letter-spacing: -0.5px;
+}
+
+.brand-center {
+    font-weight: bold;
+    font-size: var(--font-size-2xl);
+    letter-spacing: -1px;
+    justify-content: center;
+}
+
+.nav-right {
+    gap: 2rem;
+}
+
+.nav-list {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: var(--color-black);
+    font-weight: 500;
+    transition: opacity 0.3s ease;
+    padding: 1rem 0;
+    display: inline-block;
+}
+
+.nav-link:hover {
+    opacity: 0.8;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 6rem 2rem;
+    background-color: var(--color-gray-light);
+}
+
+.hero h1 {
+    font-size: var(--font-size-4xl);
+    margin-bottom: 1.5rem;
+    letter-spacing: -1px;
+    line-height: 1.2;
+}
+
+.hero-subheading {
+    font-size: var(--font-size-xl);
+    color: var(--color-gray-dark);
+    margin-bottom: 2.5rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.cta-primary,
+.cta-secondary {
+    display: inline-block;
+    padding: 1rem 2rem;
+    border-radius: 0;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    border: 2px solid;
+    cursor: pointer;
+}
+
+.cta-primary {
+    background-color: var(--color-black);
+    color: var(--color-white);
+    border-color: var(--color-black);
+}
+
+.cta-primary:hover {
+    background-color: var(--color-white);
+    color: var(--color-black);
+}
+
+.cta-secondary {
+    background-color: var(--color-white);
+    color: var(--color-black);
+    border-color: var(--color-black);
+}
+
+.cta-secondary:hover {
+    background-color: var(--color-black);
+    color: var(--color-white);
+}
+
+/* Supported Companies Banner */
+.supported-banner {
+    overflow: hidden;
+    background-color: var(--color-gray-light);
+    padding: 1rem 0;
+    position: relative;
+}
+
+/* Two identical halves sit side by side; sliding the track by exactly half its
+   width lands the second half where the first one started, so the loop has no
+   visible jump. The trailing padding-right provides the gap between the halves
+   and travels with them. Each half is far wider than any viewport, so the band
+   is never left with a blank stretch. The duration is scaled to that longer
+   track so the items still drift at a calm, readable pace. */
+.banner-track {
+    display: flex;
+    width: max-content;
+    animation: marquee 120s linear infinite;
+}
+
+.banner-group {
+    display: flex;
+    gap: 3rem;
+    padding-right: 3rem;
+    white-space: nowrap;
+}
+
+.banner-item {
+    font-size: var(--font-size-lg);
+    color: var(--color-gray-dark);
+    white-space: nowrap;
+}
+
+@keyframes marquee {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+/* Respect reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    .banner-track {
+        animation: none;
+    }
+}
+
+/* Fade the slider out at both edges on larger screens */
+@media (min-width: 769px) {
+    .supported-banner::before,
+    .supported-banner::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 6rem;
+        z-index: 2;
+        pointer-events: none;
+    }
+
+    .supported-banner::before {
+        left: 0;
+        background: linear-gradient(to right, var(--color-gray-light), rgba(245, 245, 245, 0));
+    }
+
+    .supported-banner::after {
+        right: 0;
+        background: linear-gradient(to left, var(--color-gray-light), rgba(245, 245, 245, 0));
+    }
+}
+
+/* Security Statement */
+.security-statement {
+    text-align: center;
+    padding: 3rem 2rem;
+    background-color: var(--color-white);
+    border-top: 1px solid var(--color-gray-medium);
+    border-bottom: 1px solid var(--color-gray-medium);
+}
+
+.security-statement p {
+    font-size: var(--font-size-lg);
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.7;
+    color: var(--color-black);
+}
+
+/* Sections */
+.section {
+    padding: 5rem 2rem;
+    text-align: center;
+}
+
+.section h2 {
+    font-size: var(--font-size-3xl);
+    margin-bottom: 3rem;
+    letter-spacing: -0.5px;
+    position: relative;
+    display: inline-block;
+}
+
+.section h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 2px;
+    background-color: var(--color-black);
+}
+
+/* New subsection styling */
+.section-subheading {
+    font-size: var(--font-size-lg);
+    color: var(--color-gray-dark);
+    margin-bottom: 2.5rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Card grids - Features, How it works and Capabilities share one grid system */
+.features-grid,
+.capabilities-grid,
+.process-steps {
+    display: grid;
+    gap: var(--grid-gap);
+    max-width: var(--grid-max);
+    margin: 0 auto;
+}
+
+.features-grid,
+.capabilities-grid {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+/* 2x2: steps 1 + 2 on the top row, 3 + 4 on the bottom row.
+   The container is narrowed so a 2-up cell ends up exactly as wide as a
+   3-up cell in the sections above. */
+.process-steps {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: calc((var(--grid-max) - 2 * var(--grid-gap)) / 3 * 2 + var(--grid-gap));
+}
+
+/* Cards - identical box, padding and ease-out hover for all three sections */
+.feature-card,
+.step,
+.capability-item {
+    background-color: var(--color-gray-light);
+    border: 1px solid var(--color-gray-medium);
+    border-radius: 0;
+    padding: 2.5rem;
+    text-align: left;
+    transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+}
+
+.feature-card:hover,
+.step:hover,
+.capability-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.feature-card h3,
+.step h3,
+.capability-item h3 {
+    font-size: var(--font-size-xl);
+    margin-bottom: 1rem;
+    color: var(--color-black);
+}
+
+.feature-card p,
+.step p,
+.capability-item p {
+    font-size: var(--font-size-base);
+    color: var(--color-gray-dark);
+    line-height: 1.6;
+}
+
+/* Newsletter Section */
+.newsletter {
+    text-align: center;
+    padding: 4rem 2rem;
+    background-color: var(--color-gray-light);
+}
+
+.newsletter h2 {
+    font-size: var(--font-size-2xl);
+    margin-bottom: 1.5rem;
+}
+
+.newsletter p {
+    font-size: var(--font-size-lg);
+    color: var(--color-gray-dark);
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.newsletter form {
+    display: flex;
+    gap: 1rem;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.newsletter input {
+    flex: 1;
+    padding: 1rem;
+    border: 2px solid var(--color-gray-medium);
+    border-radius: 0;
+    font-family: var(--font-primary);
+    font-size: var(--font-size-base);
+}
+
+.newsletter input:focus {
+    outline: none;
+    border-color: var(--color-black);
+}
+
+.newsletter input.error {
+    border-color: #dc3545; /* Bootstrap danger red */
+    box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
+}
+
+.form-message {
+    margin-top: 0.5rem;
+    min-height: 2rem;
+    display: flex;
+    align-items: center;
+    font-size: var(--font-size-sm);
+}
+
+.newsletter button {
+    background-color: var(--color-black);
+    color: var(--color-white);
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 0;
+    font-family: var(--font-primary);
+    font-size: var(--font-size-base);
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.newsletter button:hover {
+    background-color: var(--color-gray-dark);
+}
+
+.newsletter input:disabled,
+.newsletter button:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.newsletter button:disabled:hover {
+    background-color: var(--color-black);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 2rem;
+    border-top: 1px solid var(--color-gray-medium);
+    background-color: var(--color-gray-light);
+    font-size: var(--font-size-base);
+}
+
+footer div {
+    margin-bottom: 0.5rem;
+    color: var(--color-gray-dark);
+}
+
+/* Smooth Scroll Behavior */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .site-header {
+        flex-wrap: wrap;
+        gap: 1rem;
+        padding: 1.5rem;
+    }
+
+    .logo-left,
+    .brand-center,
+    .nav-right {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .nav-list {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .hero {
+        padding: 4rem 1.5rem;
+    }
+
+    .hero h1 {
+        font-size: var(--font-size-2xl);
+    }
+
+    .hero-subheading {
+        font-size: var(--font-size-base);
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .cta-primary,
+    .cta-secondary {
+        width: 100%;
+        max-width: 280px;
+        text-align: center;
+        padding: 0.875rem 1.5rem;
+    }
+
+    .security-statement {
+        padding: 2rem 1.5rem;
+    }
+
+    .security-statement p {
+        font-size: var(--font-size-base);
+        line-height: 1.6;
+    }
+
+    .section {
+        padding: 4rem 1.5rem;
+    }
+
+    .section h2 {
+        font-size: var(--font-size-2xl);
+        margin-bottom: 2rem;
+    }
+
+    .features-grid,
+    .capabilities-grid,
+    .process-steps {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .newsletter {
+        padding: 3rem 1.5rem;
+    }
+
+    .newsletter h2 {
+        font-size: var(--font-size-xl);
+        margin-bottom: 1rem;
+    }
+
+    .newsletter p {
+        font-size: var(--font-size-lg);
+        margin-bottom: 1.5rem;
+    }
+
+    .newsletter form {
+        gap: 0.75rem;
+    }
+
+    .newsletter input,
+    .newsletter button {
+        padding: 0.875rem;
+        font-size: var(--font-size-base);
+    }
+
+    .supported-banner {
+        padding: 0.75rem 0;
+    }
+
+    .banner-group {
+        gap: 2rem;
+        padding-right: 2rem;
+    }
+
+    .banner-track {
+        animation: marquee 90s linear infinite;
+    }
+
+    .banner-item {
+        font-size: var(--font-size-base);
+    }
+
+    footer {
+        padding: 1.5rem;
+    }
+
+    footer div {
+        margin-bottom: 0.25rem;
+        font-size: var(--font-size-sm);
+    }
+}
+
+/* Additional small screen adjustments */
+@media (max-width: 480px) {
+    .site-header {
+        padding: 1rem;
+    }
+
+    .logo-left {
+        font-size: var(--font-size-lg);
+    }
+
+    .brand-center {
+        font-size: var(--font-size-xl);
+    }
+
+    .hero h1 {
+        font-size: var(--font-size-xl);
+    }
+
+    .section {
+        padding: 3rem 1rem;
+    }
+
+    .section h2 {
+        font-size: var(--font-size-xl);
+    }
+
+    .feature-card,
+    .step,
+    .capability-item {
+        padding: 1.5rem;
+    }
+
+    .newsletter input {
+        font-size: var(--font-size-sm);
+    }
+
+    .newsletter button {
+        font-size: var(--font-size-sm);
+        padding: 0.75rem 1.25rem;
+    }
+}
+
+/* ============================================================
+   Narrative sections: Threat / Deadlines / Roadmap
+   ============================================================ */
+
+/* Alternate section background so the narrative beats read as chapters */
+.section-alt {
+    background-color: var(--color-gray-light);
+    border-top: 1px solid var(--color-gray-medium);
+    border-bottom: 1px solid var(--color-gray-medium);
+}
+
+/* --- Threat section --- */
+.threat-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--grid-gap);
+    max-width: var(--grid-max);
+    margin: 0 auto 3.5rem;
+}
+
+.threat-card {
+    background-color: var(--color-white);
+    border: 1px solid var(--color-gray-medium);
+    padding: 2rem;
+    text-align: left;
+}
+
+.threat-card h3 {
+    font-size: var(--font-size-lg);
+    margin-bottom: 1rem;
+}
+
+.threat-card p {
+    color: var(--color-gray-dark);
+    line-height: 1.6;
+}
+
+/* Capture -> Decrypt -> Expose strip */
+.hndl-timeline {
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    gap: 1rem;
+    max-width: var(--grid-max);
+    margin: 0 auto;
+}
+
+.hndl-step {
+    flex: 1;
+    background-color: var(--color-white);
+    border: 1px solid var(--color-gray-medium);
+    padding: 1.75rem;
+    text-align: left;
+}
+
+.hndl-year {
+    display: block;
+    font-size: var(--font-size-sm);
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--color-gray-dark);
+    margin-bottom: 0.5rem;
+}
+
+.hndl-step h4 {
+    font-size: var(--font-size-lg);
+    margin-bottom: 0.5rem;
+}
+
+.hndl-step p {
+    font-size: var(--font-size-sm);
+    color: var(--color-gray-dark);
+    line-height: 1.6;
+}
+
+.hndl-arrow {
+    display: flex;
+    align-items: center;
+    font-size: var(--font-size-xl);
+    color: var(--color-black);
+}
+
+/* --- Regulatory timeline --- */
+.reg-timeline {
+    list-style: none;
+    max-width: 900px;
+    margin: 0 auto 2.5rem;
+    text-align: left;
+    border-top: 1px solid var(--color-gray-medium);
+}
+
+.reg-item {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    gap: 2rem;
+    padding: 1.75rem 0;
+    border-bottom: 1px solid var(--color-gray-medium);
+}
+
+.reg-date {
+    font-weight: bold;
+    font-size: var(--font-size-sm);
+    letter-spacing: 0.5px;
+    padding-top: 0.25rem;
+}
+
+.reg-body h4 {
+    font-size: var(--font-size-lg);
+    margin-bottom: 0.5rem;
+}
+
+.reg-body p {
+    color: var(--color-gray-dark);
+    line-height: 1.6;
+    font-size: var(--font-size-sm);
+}
+
+.sources {
+    max-width: 900px;
+    margin: 0 auto;
+    font-size: var(--font-size-sm);
+    color: var(--color-gray-dark);
+    line-height: 1.8;
+}
+
+.sources a {
+    color: var(--color-black);
+    text-decoration: underline;
+}
+
+.sources a:hover {
+    color: var(--color-gray-dark);
+}
+
+/* --- Roadmap --- */
+.roadmap-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--grid-gap);
+    max-width: var(--grid-max);
+    margin: 0 auto;
+}
+
+.roadmap-phase {
+    background-color: var(--color-white);
+    border: 1px solid var(--color-gray-medium);
+    padding: 2.5rem;
+    text-align: left;
+    transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+}
+
+.roadmap-phase:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.phase-tag {
+    display: inline-block;
+    font-size: var(--font-size-sm);
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    border: 1px solid var(--color-black);
+    padding: 0.25rem 0.75rem;
+    margin-bottom: 1.25rem;
+}
+
+.roadmap-phase h3 {
+    font-size: var(--font-size-xl);
+    margin-bottom: 1rem;
+}
+
+.roadmap-phase > p {
+    color: var(--color-gray-dark);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.phase-list {
+    list-style: none;
+    border-top: 1px solid var(--color-gray-medium);
+    padding-top: 1.25rem;
+}
+
+.phase-list li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.75rem;
+    font-size: var(--font-size-sm);
+    color: var(--color-gray-dark);
+    line-height: 1.6;
+}
+
+.phase-list li::before {
+    content: '>';
+    position: absolute;
+    left: 0;
+    color: var(--color-black);
+    font-weight: bold;
+}
+
+/* --- Narrative sections: responsive --- */
+@media (max-width: 768px) {
+    .threat-grid,
+    .roadmap-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .hndl-timeline {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    .hndl-arrow {
+        justify-content: center;
+        transform: rotate(90deg);
+    }
+
+    .reg-item {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+        padding: 1.5rem 0;
+    }
+
+    .roadmap-phase {
+        padding: 1.75rem;
+    }
+
+    .threat-card {
+        padding: 1.5rem;
+    }
+}
+
